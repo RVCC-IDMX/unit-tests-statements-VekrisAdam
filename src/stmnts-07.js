@@ -13,7 +13,10 @@
  * ? [JavaScript: The Definitive Guide, Chapter 4.10](https://bit.ly/39lbxnK)
  */
 function logicalAnd(a, b) {
-  // write your code here & return
+  if (a && b) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -23,7 +26,10 @@ function logicalAnd(a, b) {
  * @returns {boolean} - true if a or b is truthy, false if both are falsy
  */
 function logicalOr(a, b) {
-  // write your code here & return
+  if (a || b) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -32,7 +38,7 @@ function logicalOr(a, b) {
  * @returns {boolean} - the opposite of the given boolean
  */
 function invertBoolean(bool) {
-  // write your code here & return
+  return !bool;
 }
 
 /**
@@ -49,7 +55,13 @@ function invertBoolean(bool) {
  * ? [JavaScript: The Definitive Guide, Chapter 5.4.3](https://bit.ly/39hrIlW)
  */
 function numberOfOdds(num) {
-  // write your code here & return
+  let count = 0;
+  for (let i = 0; i < num; i += 1) {
+    if (i % 2 !== 0) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 /**
@@ -62,7 +74,11 @@ function numberOfOdds(num) {
  * ? For example, num is 4 then return 10 because 1 + 2 + 3 + 4 = 10.
  */
 function addUpTheNumbers(num) {
-  // write your code here & return
+  let sum = 0;
+  for (let i = 0; i <= num; i += 1) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -72,16 +88,28 @@ function addUpTheNumbers(num) {
  * ? score is a positive integer 0 through 100
  * ? generate a letter grade based on the following
  * ? table
- * ? < 60	F
- * ? < 70	D
- * ? < 80	C
- * ? < 90	B
- * ? <= 100	A
+ * ? < 60 F
+ * ? < 70 D
+ * ? < 80 C
+ * ? < 90 B
+ * ? <= 100 A
  * ? return the letter grade as a string
  * ?
  */
 function gradeGenerator(score) {
-  // write your code here & return
+  let grade = 'I';
+  if (score < 60) {
+    grade = 'F';
+  } else if (score < 70) {
+    grade = 'D';
+  } else if (score < 80) {
+    grade = 'C';
+  } else if (score < 90) {
+    grade = 'B';
+  } else if (score <= 100) {
+    grade = 'A';
+  }
+  return grade;
 }
 
 /**
@@ -97,11 +125,18 @@ function gradeGenerator(score) {
  * ? return a string written like:
  * ? Francine got an A
  * ? David got a B
- * ? note: you have to use English grammar's correct indefinite article 
+ * ? note: you have to use English grammar's correct indefinite article
  * ? it's 'an A' (not a A) and 'an F' (not a F)
  */
 function getGrade(name, score) {
-  // write your code here & return
+  const grade = gradeGenerator(score);
+  let statement;
+  if (grade === 'A' || grade === 'F') {
+    statement = `${name} got an ${grade}`;
+  } else {
+    statement = `${name} got a ${grade}`;
+  }
+  return statement;
 }
 
 module.exports = {

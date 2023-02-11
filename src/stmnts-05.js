@@ -12,7 +12,13 @@
  * @returns {boolean} - true if num is odd, false otherwise
  */
 function isOdd(num) {
-  // write your code here & return
+  let result;
+  if (num % 2 === 0) {
+    result = false;
+  } else {
+    result = true;
+  }
+  return result;
 }
 
 /**
@@ -21,7 +27,11 @@ function isOdd(num) {
  * @returns {boolean} - true if num is even, false otherwise
  */
 function isEven(num) {
-  // write your code here & return
+  let result = false;
+  if (num % 2 === 0) {
+    result = true;
+  }
+  return result;
 }
 
 /**
@@ -30,7 +40,11 @@ function isEven(num) {
  * @returns {boolean} - true if value is a negative number, false otherwise
  */
 function isNegative(value) {
-  // write your code here & return
+  let result = false;
+  if (typeof value === 'number' && value < 0) {
+    result = true;
+  }
+  return result;
 }
 
 module.exports = {
